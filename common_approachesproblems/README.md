@@ -1,0 +1,1 @@
+# Common approaches/problems {#common-approaches-problems}
