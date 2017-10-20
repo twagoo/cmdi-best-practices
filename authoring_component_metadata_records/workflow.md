@@ -13,7 +13,7 @@ Concerning metadata quality assessment in the workflow, some aspects can be chec
 
 The following aspects on the other hand need to be checked after VLO import:
 
-*   appropriateness of all normalised and mapped values for VLO facets (cf. VLO-mapping<sup><sup id="135825715930509-footnote-ref-1"><a href="#135825715930509-footnote-1">[2]</a></sup></sup>) - any mapping issues should be reported via cmdi@clarin.eu
+*   appropriateness of all normalised and mapped values for VLO facets (cf. VLO-mapping[^2]) - any mapping issues should be reported via cmdi@clarin.eu
 *   appropriateness of the display of resource hierarchies, especially in cases where MdSelfLink and/or ResourceProxy values are changed as part of the workflow
 
 [^2]: https://vlo.clarin.eu/mapping

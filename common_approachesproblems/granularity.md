@@ -1,7 +1,12 @@
+---
+editor: Dieter
+---
+
 ## Granularity {#granularity}
 
-Editor: Dieter
+* [ ] See [https://www.clarin.eu/sites/default/files/AP3-007-CMDI\_and\_granularity.pdf](https://www.clarin.eu/sites/default/files/AP3-007-CMDI_and_granularity.pdf)
 
-See [https://www.clarin.eu/sites/default/files/AP3-007-CMDI_and_granularity.pdf](https://www.clarin.eu/sites/default/files/AP3-007-CMDI_and_granularity.pdf)
+* [ ] …
 
-…
+
+

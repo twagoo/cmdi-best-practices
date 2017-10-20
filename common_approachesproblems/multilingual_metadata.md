@@ -1,3 +1,10 @@
+---
+editor: Menzo
+---
+
 ## Multilingual metadata {#multilingual-metadata}
 
-Editor: Menzo
+…
+
+
+

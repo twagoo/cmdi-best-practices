@@ -1,5 +1,8 @@
+---
+editor: Twan
+---
+
 ## Licensing {#licensing}
 
-Editor: Twan
-
 …
+

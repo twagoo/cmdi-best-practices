@@ -48,7 +48,7 @@ When making an element or attribute mandatory and give it the simple type "strin
 
 Don’t use string type if a more specific type can be used.
 
-###### C8: Prefer elements over attributes
+###### C8: Prefer elements over attributes {#c8}
 
 Attributes generally serve as place to annotate, i.e. provide information about the content of their parent element or component, which is a relatively rare requirement. Attributes lack a number of features that are available on elements, such as the option of being multilingual \(as attributes cannot be annotated\), the usage of value concept links \(for the same reason\) and have a maximum cardinality of one. Therefore attributes should only be introduced if there is an actual need to provide 'meta-metadata', for example to indicate a degree of uncertainty regarding a value, or to specify a unit of measure. Always consider grouping closely related information \(such as language name and language code\) in a component rather than making one information item an attribute of the other.
 

@@ -15,7 +15,7 @@ editor: Thomas
 * A _Lazy Component_ is a non-inline component that is used in a profile of which only small parts are actually intended to be used. In this case it may be reasonable to only include the used elements of this component in the profile.
 * The name of a profile should give even inexperienced users some understanding about the described resource type. If this is not the case it may be useful to _rename_ the _profile_. If a more detailed description is necessary, this can be specified in the description section of the profile.
 * Profiles that refer to external resources via elements or attributes of type ‘anyURI’ may be candidates for a redesign where these references may be explicitly specified in resource proxy elements in the CMD resource section \(also see recommendations with respect to resource proxies in metadata records\).
-* In general it is recommended to store metadata content in elements instead of using attributes, as this often leads to a more comprehensible design and eases automatic extraction of content. The extensive use of attributes for storing metadata content may be an indicator for a necessary redesign. In those cases the usage of elements or even the creation of a new metadata component may be reasonable. See also C8 above.
+* In general it is recommended to store metadata content in elements instead of using attributes, as this often leads to a more comprehensible design and eases automatic extraction of content. The extensive use of attributes for storing metadata content may be an indicator for a necessary redesign. In those cases the usage of elements or even the creation of a new metadata component may be reasonable. See also [C8](/modelling_component_metadata/components.md#c8) above.
 
 
 
