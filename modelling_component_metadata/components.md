@@ -40,7 +40,7 @@ The most important thing is to use a naming pattern that is as consistent as pos
 
 ### Constraints and value schemes {#constraints-and-value-schemes}
 
-###### C6: Discourage empty string values
+###### C6: Discourage empty string values {#c6}
 
 When making an element or attribute mandatory and give it the simple type "string", this should imply the requirement of a non-empty value. In other words, do not encourage the creation of empty elements or attributes in the metadata but rather consider making an element or attribute optional.
 
