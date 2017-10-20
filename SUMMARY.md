@@ -1,6 +1,6 @@
 # Summary
 
-* [CMDI Best Practices](README.md)
+* [Best practices for CMDI in CLARIN](README.md)
 * [Introduction](introduction/README.md)
   * [Scope](introduction/scope.md)
   * [Outline](introduction/outline.md)
@@ -9,13 +9,13 @@
   * [Components](modelling_component_metadata/components.md)
   * [Profiles](modelling_component_metadata/profiles.md)
   * [Workflow](modelling_component_metadata/workflow.md)
-  * [Problem indicators (“bad smells”)](modelling_component_metadata/problem_indicators_bad_smells.md)
+  * [Problem indicators \(“bad smells”\)](modelling_component_metadata/problem_indicators_bad_smells.md)
 * [Authoring Component Metadata Records](authoring_component_metadata_records/README.md)
   * [General XML](authoring_component_metadata_records/general_xml.md)
   * [The envelope](authoring_component_metadata_records/the_envelope.md)
   * [The component section](authoring_component_metadata_records/the_component_section.md)
   * [Workflow](authoring_component_metadata_records/workflow.md)
-  * [Problem indicators (“bad smells”)](authoring_component_metadata_records/problem_indicators_bad_smells.md)
+  * [Problem indicators \(“bad smells”\)](authoring_component_metadata_records/problem_indicators_bad_smells.md)
 * [Common approaches/problems](common_approachesproblems/README.md)
   * [Multilingual metadata](common_approachesproblems/multilingual_metadata.md)
   * [Granularity](common_approachesproblems/granularity.md)
@@ -24,3 +24,4 @@
 * [Recommendations](recommendations/README.md)
   * [Recommended components](recommendations/recommended_components.md)
   * [Recommended profiles](recommendations/recommended_profiles.md)
+
