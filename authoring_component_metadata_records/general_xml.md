@@ -20,7 +20,9 @@ Namespace prefixes are officially just syntactic sugar in XML, i.e., provide a c
 | xs | [http://www.w3.org/2001/XMLSchema](http://www.w3.org/2001/XMLSchema) | XML Schema | prefixed |
 | xsi | [http://www.w3.org/2001/XMLSchema-instance](http://www.w3.org/2001/XMLSchema-instance) | XML Schema instance | prefixed |
 
-* [ ] See workflow regarding validation, which implies well formed XML
+|TODO|
+|----|
+|See workflow regarding validation, which implies well formed XML|
 
 ###### X3: Use UTF-8 encoding
 

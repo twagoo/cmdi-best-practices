@@ -46,9 +46,13 @@ A CMD record should be available via a PID \(with\(out\) a part identifier\) \(s
 
 #### Resource {#resource}
 
-Is there an indication of the mime type? Does it match the actual mime type of the response obtained from the resource location?
+|TODO|
+|----|
+|Is there an indication of the mime type? Does it match the actual mime type of the response obtained from the resource location?|
 
-The use of format variants.
+|TODO|
+|----|
+|The use of format variants.|
 
 ###### E9: Specify the MIME type of a resource
 

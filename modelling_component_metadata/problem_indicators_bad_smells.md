@@ -4,7 +4,9 @@ editor: Thomas
 
 ## Problem indicators \(“bad smells”\) {#problem-indicators-bad-smells}
 
-* [ ] No “recommended” components as smell?
+|TODO|
+|----|
+|No “recommended” components as smell?|
 
 \(Bad\) Smells are used as simple indicators for bad or inefficient designs \(typically in programming languages\). To identify a specific “smell” in a profile does not necessarily mean that the design is broken and should be replaced. Instead it should be seen as a warning sign that there may be a problem which should be checked. Measures to eliminate actual problems by changing the design are often called refactorings. In the following some “smells” and refactorings \(adapted from their counterpart in object oriented programming\) are shortly discussed:
 

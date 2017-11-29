@@ -106,9 +106,17 @@ A vocabulary included in CMDI might consist of a @cmd:URI containing the link to
 
 ### Concepts {#concepts}
 
-* [ ] See best practices in [https://www.clarin.eu/sites/default/files/trippel-zinn-CLARIN2016\_paper\_15.pdf](https://www.clarin.eu/sites/default/files/trippel-zinn-CLARIN2016_paper_15.pdf)
-* [ ] How to select a matching \(semantically close enough\) concept? When do you need to suggest a new concept?
-* [ ] For guidelines for concept definitions see the CCR coordinators.
+|TODO|
+|----|
+|See best practices in [https://www.clarin.eu/sites/default/files/trippel-zinn-CLARIN2016\_paper\_15.pdf](https://www.clarin.eu/sites/default/files/trippel-zinn-CLARIN2016_paper_15.pdf)|
+
+|TODO|
+|----|
+|How to select a matching \(semantically close enough\) concept? When do you need to suggest a new concept?|
+
+|TODO|
+|----|
+|For guidelines for concept definitions see the CCR coordinators.|
 
 In CMDI the semantics of all building blocks, e.g., components, elements and values, can be made explicit by adding a concept link. Such a link refers to an entry in a semantic registry, typically the CLARIN Concept Registry \(CCR; [clarin.eu/conceptregistry](http://www.clarin.eu/conceptregistry)\). Central parts of the CLARIN infrastructure use this semantic overlay to overcome the heterogeneity in both structure and naming of profiles and components.
 
@@ -122,7 +130,9 @@ Reusing existing components will, in many cases, bring along concept links, pote
 
 Values, attributes and elements always exist within a component. Such a component, and possible ancestor components, can be used to provide semantic context. For example, the component ‘Actor’ provides the role a person plays within the metadata record. However, sometimes CMDI forces one to introduce an intermediate component that covers only data structuring needs, with but no semantic use. For example, a ‘description’ component that contains a ‘description’ element. There is no need to attach concept links to such components. Next to such corner cases a good general approach is to add a concept link to at least the ‘root component’ of a reusable component.
 
-* [ ] TODO: Refer to approved concepts
+|TODO|
+|----|
+|Refer to approved concepts|
 
 ###### C14: Refer to a concept that is “as generic as possible but as specific as needed”
 
@@ -134,7 +144,11 @@ The preferred semantic registry of CLARIN is the CLARIN Concept Registry \(CCR; 
 
 ###### C16: If no matching concept can be found suggest a new or modified concept
 
-Although the CCR concepts and the Dublin Core elements/terms already cover a lot of use cases one might encounter the need for a new concept, or would like to adapt a CCR concept just a little bit to make it fit better. The new concept specification, in the form of a preferred name and definition, or the modification should be suggested to the CCR Content Coordinators \([clarin.eu/ccr](http://www.clarin.eu/ccr)\). Reference to the CCR Guidelines.
+Although the CCR concepts and the Dublin Core elements/terms already cover a lot of use cases one might encounter the need for a new concept, or would like to adapt a CCR concept just a little bit to make it fit better. The new concept specification, in the form of a preferred name and definition, or the modification should be suggested to the CCR Content Coordinators \([clarin.eu/ccr](http://www.clarin.eu/ccr)\). 
+
+|TODO|
+|----|
+|Reference to the CCR Guidelines.|
 
 The semantic richness, in the form of concept links, is also part of the quality assessment of a component and profile \(see workflow section below\).
 
