@@ -12,7 +12,11 @@ In general, it should be aimed at providing ‘complete’ metadata information 
 
 ### Resource proxy references {#resource-proxy-references}
 
-It is possible to refer to the resource a Components section specifically applies to by including the respective Resource Proxy in the @CMD:ref attribute of the component’s root element \(cmdp:{RootComponent}\). If doing so, don’t refer back to all Resource Proxies \(even though this would be possible with CMDI 1.1\) but only refer to one Resource Proxy -- the other Resource Proxies are implicitely referenced as well, this way.
+###### CS2: refer to a ResourceProxy for resource specific metadata components {#cs2}
+
+\[priority: medium\]
+
+It is possible to refer to the resource a Components section specifically applies to by including the respective Resource Proxy id in the @cmd:ref attribute of the component’s root element. Don’t refer back to all Resource Proxies, which is possible with CMDI 1.1, as this is the implicit default.
 
 ### Vocabularies {#vocabularies}
 
