@@ -142,41 +142,55 @@ A vocabulary included in CMDI might consist of a link to an external vocabulary 
 
 | TODO |
 | --- |
-| For guidelines for concept definitions see the CCR coordinators. |
+| For guidelines for concept definitions see the CCR coordinators. \(see [https://www.overleaf.com/read/pxnsftbcphhb](https://www.overleaf.com/read/pxnsftbcphhb) \(draft\)\) |
 
-In CMDI the semantics of all building blocks, e.g., components, elements and values, can be made explicit by adding a concept link. Such a link refers to an entry in a semantic registry, typically the CLARIN Concept Registry \(CCR; [clarin.eu/conceptregistry](http://www.clarin.eu/conceptregistry)\). Central parts of the CLARIN infrastructure use this semantic overlay to overcome the heterogeneity in both structure and naming of profiles and components.
+In CMDI the semantics of all building blocks, e.g., components, elements and values, can be made explicit by adding a concept link. Such a link refers to an entry in a semantic registry, typically the CLARIN Concept Registry \(CCR\).[^2] Central parts of the CLARIN infrastructure use this semantic overlay to overcome the heterogeneity in both structure and naming of profiles and components.
 
 ###### C14: Add concept links to all elements, attributes and vocabulary items {#c14}
 
-As a basis the semantics of most values in a metadata record should be made explicit. This is done by adding concept links to both elements and attributes. And where possible to the value itself, i.e., adding concept links to closed/open vocabulary items. In the case of open vocabulary items these concept links should also be expressed as _value concept links_ in the metadata records itself.
+\[priority: high\] \[CLARIN B Centre requirement: 6.9.b\] \[_TODO: check: CMDValidate_\]
+
+As a basis the semantics of most values in a metadata record should be made explicit. This is done by adding concept links to both elements and attributes. And where possible to the value itself, i.e., adding concept links to closed/open vocabulary items.
 
 Reusing existing components will, in many cases, bring along concept links, potentially already optimised for mapping to VLO facets. In case you have to assess this mapping yourself it is good to inspect the existing VLO concept to facet mapping at [vlo.clarin.eu/mapping](http://vlo.clarin.eu/mapping).
 
 ###### C15: Add concept links to salient components {#c15}
 
+\[priority: medium\] \[_TODO: \(partially\) check: CMDValidate_\]
+
 Values, attributes and elements always exist within a component. Such a component, and possible ancestor components, can be used to provide semantic context. For example, the component ‘Actor’ provides the role a person plays within the metadata record. However, sometimes CMDI forces one to introduce an intermediate component that covers only data structuring needs, with but no semantic use. For example, a ‘description’ component that contains a ‘description’ element. There is no need to attach concept links to such components. Next to such corner cases a good general approach is to add a concept link to at least the ‘root component’ of a reusable component.
 
-| TODO |
-| --- |
-| Refer to approved concepts |
+###### TODO: C16: Refer to approved concepts
 
-###### C14: Refer to a concept that is “as generic as possible but as specific as needed”
+\[priority: medium\] \[_TODO: check: CMDValidate_\]
+
+###### C17: Refer to a concept that is “as generic as possible but as specific as needed”
+
+\[priority: high\]
 
 As is the case with naming and structuring components and elements concept links should also be as generic as possible, i.e., foster reuse of the component by not pinpointing the semantics too specifically. For example, a generic ‘person name’ concept can be used without indication of the role the person plays within the component or profile. However, a general name concept might not be suited as it needs to be explicit that it is a person’s name. But see C13 to still use generic concepts and add specific semantics using the context.
 
-###### C15: Refer to a persistent semantic registry
+###### C18: Refer to a persistent semantic registry
 
-The preferred semantic registry of CLARIN is the CLARIN Concept Registry \(CCR; [clarin.eu/conceptregistry](http://www.clarin.eu/conceptregistry)\). This registry issues persistent identifiers to its entries and thus concept links in CMDI are stable even when the underlying technology of the registry changes. Next to the CCR also the Dublin Core elements or terms, which use PURLs as persistent identifiers, are considered stable enough. If you consider to refer to another semantic registry please contact the CCR Content Coordinators \([clarin.eu/ccr](http://www.clarin.eu/ccr)\) so the persistency of the registry can be assessed and the use of its \(persistent\) identifiers as concept links can be considered.
+\[priority: high\] \[CLARIN B Centre requirement: 6.9.b\] \[_TODO: check: CMDValidate_\]
 
-###### C16: If no matching concept can be found suggest a new or modified concept
+The preferred semantic registry of CLARIN is the CCR. This registry issues persistent identifiers to its entries and thus concept links in CMDI are stable even when the underlying technology of the registry changes. Next to the CCR also the Dublin Core elements or terms, which use PURLs as persistent identifiers, are considered stable enough. If you consider to refer to another semantic registry please contact the CCR Content Coordinators[^3] so the persistency of the registry can be assessed and the use of its \(persistent\) identifiers as concept links can be considered.
 
-Although the CCR concepts and the Dublin Core elements/terms already cover a lot of use cases one might encounter the need for a new concept, or would like to adapt a CCR concept just a little bit to make it fit better. The new concept specification, in the form of a preferred name and definition, or the modification should be suggested to the CCR Content Coordinators \([clarin.eu/ccr](http://www.clarin.eu/ccr)\).
+###### C19: If no matching concept can be found suggest a new or modified concept
+
+\[priority: medium\]
+
+Although the CCR concepts and the Dublin Core elements/terms already cover a lot of use cases one might encounter the need for a new concept, or would like to adapt a CCR concept just a little bit to make it fit better. The new concept specification, in the form of a preferred name and definition, or the modification should be suggested to the CCR Content Coordinators.
 
 | TODO |
 | --- |
 | Reference to the CCR Guidelines. |
 
-The semantic richness, in the form of concept links, is also part of the quality assessment of a component and profile \(see workflow section below\).
+The semantic richness, in the form of concept links, is also part of the quality assessment of a component and profile \(see [workflow](/modelling_component_metadata/workflow.md) section below\).
 
 [^1]: See [https://vocabularies.clarin.eu/clavas/](https://vocabularies.clarin.eu/clavas/)
+
+[^2]: See [https://concepts.clarin.eu/ccr/](https://concepts.clarin.eu/ccr/)
+
+[^3]: See https://www.clarin.eu/ccr/
 
