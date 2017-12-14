@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
 * [Scope](introduction/scope.md)
+* [How to use this Guide](how-to-use-this-guide.md)
 * [Outline](introduction/outline.md)
 * [CMDI Workflow](cmdi_workflow.md)
 * [Modelling Component Metadata](modelling_component_metadata/README.md)
