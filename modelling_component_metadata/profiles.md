@@ -6,9 +6,11 @@ editor: Thomas
 
 ###### P1: Reuse components
 
+\[priority: high\] \[_TODO: check: CMDValidate_\]
+
 A main idea behind the CMD framework is the use of existing components to reduce the amount of work and to improve the general quality of profiles by benefiting from existing work of more experienced users. Therefore it is strongly encouraged to check the existing stock of profiles and components regarding their usefulness for your specific needs.
 
-As it is very likely that at least some of the aspects of every resource type are comparable to other resources \(e.g. standard descriptive metadata like resource name, license or providing organisation\), these are natural candidates for a successful reuse. A profile that does not use existing components or that does not make use of any non-inline components contradicts the general idea of CMDI and is therefore undesirable. For a fast insight on which components are recommended by experienced profile designers, these components are included in the group “recommended” and can be displayed in the standard component registry. For a similar reason it is advised to compare a new design with recommended profiles.
+As it is very likely that at least some of the aspects of every resource type are comparable to other resources \(e.g. standard descriptive metadata like resource name, license or providing organisation\), these are natural candidates for a successful reuse. A profile that does not use existing components or that does not make use of any non-inline components contradicts the general idea of CMDI and is therefore undesirable. For a fast insight on which components are recommended by experienced profile designers, these components are included in the group “recommended” and can be displayed in the standard component registry \[_TODO_\]. For a similar reason it is advised to compare a new design with recommended profiles. \(See section [Recommendations](/recommendations/README.md).\)
 
 ###### P2: One component for one aspect
 

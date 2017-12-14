@@ -90,7 +90,7 @@ When creating a new component, try not to model only for your specific needs but
 
 \[priority: high\] \[_TODO: check: CMDValidate_\]
 
-The power of the CMDI model lies in the possibility of reusing and recombining components. Metadata modellers can benefit from the effort that other modellers put into designing, documenting and semantically annotating CMDI components. Existing components, in particular the **recommended** ones \(see section _TODO: Recommendations_\) have been tested in practice and have a good chance of being optimised for e.g. facet mapping in the VLO. Therefore it is advised to always look for existing components that fully or partially meet your requirements \(see [Workflow](../authoring_component_metadata_records/workflow.md)\). Multiple existing components can be combined into new components \(reused\) if they fit, and optionally new components can be created using existing components as a template \(this can be referred to as 'recycling'\), for example when additional elements within a component are required or different cardinalities are desired.
+The power of the CMDI model lies in the possibility of reusing and recombining components. Metadata modellers can benefit from the effort that other modellers put into designing, documenting and semantically annotating CMDI components. Existing components, in particular the **recommended** ones \(see section _TODO: Recommendations_\) have been tested in practice and have a good chance of being optimised for e.g. facet mapping in the VLO. Therefore it is advised to always look for existing components that fully or partially meet your requirements \(see [Workflow](./workflow.md)\). Multiple existing components can be combined into new components \(reused\) if they fit, and optionally new components can be created using existing components as a template \(this can be referred to as 'recycling'\), for example when additional elements within a component are required or different cardinalities are desired.
 
 _TODO: Contact the owner of a component to discuss the needed changes, which could lead to a revision of the component. This process could be supported \(partially\) by the Component Registry. At the moment, the conversation will in general have to be initiated via the registry maintainer \(contact: cmdi@clarin.eu\)._
 
@@ -168,7 +168,7 @@ Values, attributes and elements always exist within a component. Such a componen
 
 \[priority: high\]
 
-As is the case with naming and structuring components and elements concept links should also be as generic as possible, i.e., foster reuse of the component by not pinpointing the semantics too specifically. For example, a generic ‘person name’ concept can be used without indication of the role the person plays within the component or profile. However, a general name concept might not be suited as it needs to be explicit that it is a person’s name. But see C13 to still use generic concepts and add specific semantics using the context.
+As is the case with naming and structuring components and elements concept links should also be as generic as possible, i.e., foster reuse of the component by not pinpointing the semantics too specifically. For example, a generic ‘person name’ concept can be used without indication of the role the person plays within the component or profile. However, a general name concept might not be suited as it needs to be explicit that it is a person’s name. But see [C15](#c15) to still use generic concepts and add specific semantics using the context.
 
 ###### C18: Refer to a persistent semantic registry
 
@@ -192,5 +192,5 @@ The semantic richness, in the form of concept links, is also part of the quality
 
 [^2]: See [https://concepts.clarin.eu/ccr/](https://concepts.clarin.eu/ccr/)
 
-[^3]: See https://www.clarin.eu/ccr/
+[^3]: See [https://www.clarin.eu/ccr/](https://www.clarin.eu/ccr/)
 
