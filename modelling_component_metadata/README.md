@@ -1,6 +1,6 @@
 # Modelling Component Metadata {#modelling-component-metadata}
 
-###### M1: Make your components, profiles and concepts "as generic as possible and as specific as needed"
+###### M1: Make your components, profiles and concepts "as generic as possible and as specific as needed" {#m1}
 
 \[priority: high\]
 

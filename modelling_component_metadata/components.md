@@ -68,7 +68,7 @@ Don’t use string type if a more specific type can be used.
 
 Attributes generally serve as place to annotate, i.e. provide information about the content of their parent element or component, which is a relatively rare requirement. Attributes lack a number of features that are available on elements, such as the option of being multilingual \(as attributes cannot be annotated\), the usage of value concept links \(for the same reason\) and have a maximum cardinality of one. Therefore attributes should only be introduced if there is an actual need to provide 'meta-metadata', for example to indicate a degree of uncertainty regarding a value, or to specify a unit of measure. Always consider grouping closely related information \(such as language name and language code\) in a component rather than making one information item an attribute of the other.
 
-Also see [Vocabularies](#value-vocabularies)C9: Prefer vocabularies over booleans
+###### C9: Prefer vocabularies over booleans {#c9}
 
 \[priority: medium\] \[_TODO: check: CMDValidate_\]
 
@@ -84,11 +84,15 @@ When creating a new component, try not to model only for your specific needs but
 
 * generic naming \(see the Naming best practices above\);
 * granularity; try to cover just one aspect with your component, or a particular, common combination of aspects by combining other independent components
-* permissiveness of cardinalities; if _you_ don’t _need_ multiple instances of a field for your particular use case, that doesn’t mean that an upper bound of 1 is always the best choice - as long as multiple values are conceptually sound, do not exclude such use cases unnecessarily \(also see Constraints and value schemes best practices above\)
+* permissiveness of cardinalities; if _you_ don’t _need_ multiple instances of a field for your particular use case, that doesn’t mean that an upper bound of 1 is always the best choice - as long as multiple values are conceptually sound, do not exclude such use cases unnecessarily \(also see [Constraints and value schemes](#constraints-and-value-schemes) best practices above\)
 
 ###### C11: Reuse or recycle components where possible
 
-The power of the CMDI model lies in the possibility of reusing and recombining components. Metadata modellers can benefit from the effort that other modellers put into designing, documenting and semantically annotating CMDI components. Existing components, in particular the **recommended** ones \(see below\) have been tested in practice and have a good chance of being optimised for e.g. facet mapping in the VLO. Therefore it is advised to always look for existing components that fully or partially meet your requirements \(see [Workflow](../authoring_component_metadata_records/workflow.md)\). Multiple existing components can be combined into new components \(reused\) if they fit, and optionally new components can be created using existing components as a template \(this can be referred to as 'recycling'\), for example when additional elements within a component are required or different cardinalities are desired.
+\[priority: high\] \[_TODO: check: CMDValidate_\]
+
+The power of the CMDI model lies in the possibility of reusing and recombining components. Metadata modellers can benefit from the effort that other modellers put into designing, documenting and semantically annotating CMDI components. Existing components, in particular the **recommended** ones \(see section _TODO: Recommendations_\) have been tested in practice and have a good chance of being optimised for e.g. facet mapping in the VLO. Therefore it is advised to always look for existing components that fully or partially meet your requirements \(see [Workflow](../authoring_component_metadata_records/workflow.md)\). Multiple existing components can be combined into new components \(reused\) if they fit, and optionally new components can be created using existing components as a template \(this can be referred to as 'recycling'\), for example when additional elements within a component are required or different cardinalities are desired.
+
+_TODO: Contact the owner of a component to discuss the needed changes, which could lead to a revision of the component. This process could be supported \(partially\) by the Component Registry. At the moment, the conversation will in general have to be initiated via the registry maintainer \(contact: cmdi@clarin.eu\)._
 
 It may not always be clear if an existing component can serve as a good basis for a new component. In some cases the better option may actually turn out to be to create a component from scratch. Although it is hard to draw a clear line that is generally applicable, we can provide some guidelines as to whether a component **can** be considered fit for "recycling":
 
@@ -96,7 +100,7 @@ It may not always be clear if an existing component can serve as a good basis fo
 * OR: a majority of child components, elements and attributes can be retained as is \(possibly with a change in order\)
 * OR: all or nearly all child components, elements and attributes can be retained \(possibly with a change in order\) but one or more need to be enriched \(e.g. adding a concept link or documentation\) or slightly modified \(change in cardinality or multilingual property\) or replaced \(in case of a linked component\)
 
-These are signs that a given component is **not** a suitable template for a new component with specific requirements:
+The following signs indicate that a given component may **not** be a suitable template for a new component with specific requirements:
 
 * A majority of child components, elements and attributes would need to be removed or modified
 * The concept link of the component itself needs to be changed to one that is not closely related to the original one \(an indication that the component is semantically too distinct from the one required\)
@@ -110,17 +114,21 @@ These are signs that a given component is **not** a suitable template for a new 
 * [ ] Discuss general vs specific vocabularies
 * [ ] ...
 
-###### Prefer controlled vocabularies
+###### C12: Prefer controlled vocabularies {#c12}
 
-On vocabulary level in order to minimize inconsistencies regarding the selection of values as well as variance due to spelling conventions or typing errors, metadata modellers should provide specifications for the vocabulary intended as element and attribute contents wherever possible.
+\[priority: medium\] \[_TODO: check: CMDValidate_\]
 
-The best way to provide a vocabulary is by referencing an existing vocabulary of the CLARIN Vocabulary Access Service CLAVAS \([https://openskos.meertens.knaw.nl/clavas/](https://openskos.meertens.knaw.nl/clavas/)\). In case CLAVAS does not contain a suitable vocabulary for a considered domain it is possible to propose a new vocabulary for CLAVAS. In that case please contact: cmdi@clarin.eu. Note, however, that the person or group proposing a vocabulary to CLAVAS has to take the responsibility for maintaining it or for securing its long-term maintenance. Another way to restrict the vocabulary is to provide fixed value lists for elements or attributes. This is the recommended procedure for center-specific vocabularies. Centers should, however, endeavor to use generic labels which can be interpreted or even re-used outside the center’s reach. Value lists may again be closed or open, allowing users still to choose their individual vocabulary items or not \(with the same limitations as discussed above\).
+In order to minimize inconsistencies regarding the selection of values as well as variance due to spelling conventions or typing errors, metadata modellers should provide specifications for the vocabulary intended as element and attribute contents wherever possible.
 
-Furthermore, the CLARIN Component Registry offers the option to provide patterns conveying conventions for the style of value strings or to specify the datatype of a value \(e.g. if it should be a date, time, integer, or boolean\). If none of the above ways is feasible, it should be considered to use means for checking, external to the CMDI infrastructure \(e.g. Schematron constraints\) while keeping the CMDI profile unrestrictive with regard to element and attribute values.
+The best way to provide a vocabulary is by referencing an existing vocabulary of the CLARIN Vocabulary Access Service \(CLAVAS\).[^1] In case CLAVAS does not contain a suitable vocabulary for a considered domain it is possible to propose a new vocabulary for CLAVAS. In that case please contact: cmdi@clarin.eu. Note, however, that the person or group proposing a vocabulary to CLAVAS has to take the responsibility for maintaining it or for securing its long-term maintenance.
 
-###### Make use of @cmd:ConceptLink
+A CLAVAS vocabulary can be used as a closed or open vocabulary. Use an open vocabulary if MD providers should still be able to use individual \(not predefined\) vocabulary items. The open vocabulary then represents a set of suggestions for vocabulary items that should be considered. Be aware, however, that this does not restrict metadata creators to these suggestions, i.e. they can introduce variant spellings of semantically equivalent values. Another way to restrict the vocabulary is to provide fixed value lists for elements or attributes. This is the recommended procedure for centre-specific vocabularies. Centres should, however, endeavour to use generic labels which can be interpreted or even re-used outside the centre’s reach \(see [M1](/modelling_component_metadata/README.md#m1)\).
 
-A vocabulary included in CMDI might consist of a @cmd:URI containing the link to an external vocabulary \(e.g. a CLAVAS vocabulary\) or an enumeration of vocabulary items. In case of the latter, add a Concept Link to each item of the proposed vocabulary to determine its semantics.
+Furthermore, the CLARIN Component Registry offers the option to provide patterns conveying conventions for the style of value strings or to specify the datatype of a value \(e.g. if it should be a date, time, integer, or boolean\)\(see [Constraints and value schemes](#constraints-and-value-schemes)\). If none of the above ways is feasible, it should be considered to use means for checking, external to the CMDI infrastructure \(e.g. Schematron constraints\) while keeping the CMDI profile unrestrictive with regard to element and attribute values.
+
+###### C13: Make use of @cmd:ConceptLink {#c13}
+
+A vocabulary included in CMDI might consist of a link to an external vocabulary \(in general a CLAVAS vocabulary\) or an enumeration of vocabulary items. In case of the latter, add a Concept Link to each item of the proposed vocabulary to determine its semantics \(see [C14](#c14)\).
 
 ### Concepts {#concepts}
 
@@ -138,13 +146,13 @@ A vocabulary included in CMDI might consist of a @cmd:URI containing the link to
 
 In CMDI the semantics of all building blocks, e.g., components, elements and values, can be made explicit by adding a concept link. Such a link refers to an entry in a semantic registry, typically the CLARIN Concept Registry \(CCR; [clarin.eu/conceptregistry](http://www.clarin.eu/conceptregistry)\). Central parts of the CLARIN infrastructure use this semantic overlay to overcome the heterogeneity in both structure and naming of profiles and components.
 
-###### C12: Add concept links to all elements, attributes and vocabulary items
+###### C14: Add concept links to all elements, attributes and vocabulary items {#c14}
 
 As a basis the semantics of most values in a metadata record should be made explicit. This is done by adding concept links to both elements and attributes. And where possible to the value itself, i.e., adding concept links to closed/open vocabulary items. In the case of open vocabulary items these concept links should also be expressed as _value concept links_ in the metadata records itself.
 
 Reusing existing components will, in many cases, bring along concept links, potentially already optimised for mapping to VLO facets. In case you have to assess this mapping yourself it is good to inspect the existing VLO concept to facet mapping at [vlo.clarin.eu/mapping](http://vlo.clarin.eu/mapping).
 
-###### C13: Add concept links to salient components
+###### C15: Add concept links to salient components {#c15}
 
 Values, attributes and elements always exist within a component. Such a component, and possible ancestor components, can be used to provide semantic context. For example, the component ‘Actor’ provides the role a person plays within the metadata record. However, sometimes CMDI forces one to introduce an intermediate component that covers only data structuring needs, with but no semantic use. For example, a ‘description’ component that contains a ‘description’ element. There is no need to attach concept links to such components. Next to such corner cases a good general approach is to add a concept link to at least the ‘root component’ of a reusable component.
 
@@ -169,4 +177,6 @@ Although the CCR concepts and the Dublin Core elements/terms already cover a lot
 | Reference to the CCR Guidelines. |
 
 The semantic richness, in the form of concept links, is also part of the quality assessment of a component and profile \(see workflow section below\).
+
+[^1]: See [https://vocabularies.clarin.eu/clavas/](https://vocabularies.clarin.eu/clavas/)
 
