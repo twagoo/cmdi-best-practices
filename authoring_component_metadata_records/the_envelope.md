@@ -152,6 +152,10 @@ This is a bottom-up method of describing resource hierarchies, and constitutes a
 
 \[priority: high\] \[check: CMDI Instance Validator\]
 
+| Note by Menzo |
+| :--- |
+| Needs to be reformulated. As phrased now this is covered by the XSD validation, i.e. is on the spec level. Maybe "relate resources (incl. other CMDI records) using the right mechanism" |
+
 Note that ResourceRelation is strictly connected to ResourceProxy in the sense that both resources related by ResourceRelation must be instances of ResourceProxy. Any other relationships, e.g.
 
 * between ResourceProxy instances and the described resource as a whole or other \(external\) resources,

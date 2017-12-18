@@ -36,6 +36,10 @@ The default language for element contents is English, meaning that English wordi
 
 \[priority: medium\]
 
+| Note by Twan |
+| :--- |
+| I don't think we have to advise against providing (relevant) generic metadata as long as the specific information is also there. For example genere literature + genre crime novel would actually be helpful in terms of discoverability - unless the value comes from an ontology that allows us to derive such information, but this generally will not be the case. |
+
 The information provided should be specific rather than generic \(e.g. two items “`gesture`” and “`speech`” for modality would be preferred to one item “`multimodal`”\). Similarly, there should be exactly one value per element. In case of several suitable values use several elements accordingly \(e.g. prefer `<modality>gesture</modality><modality>speech</modality>` to `<modality>gesture, speech</modality>`\). Note: In cases where controlled vocabularies are provided, the values are governed by those. However, also when metadata creators are free to type any string, it is best practice to avoid assigning enumerations of \(what is generally perceived as\) distinct values to one and the same element or attribute.
 
 ### Vocabularies
@@ -45,6 +49,11 @@ The information provided should be specific rather than generic \(e.g. two items
 \[priority: medium\] \[_TODO: partially check: CMDI Instance Validator_\]
 
 In case of an open vocabulary provided for an element or attribute the proposed vocabulary should be applied wherever possible and only extended in case of gaps with regard to contents/concepts. If the proposed vocabulary is extended, try to avoid overlapping meanings and ambiguities among vocabulary items.
+
+| Note by Menzo |
+| :--- |
+| Turn into a separate BP: "If a suggested value is taken for an element and a concept link is available in the vocabulary, the link should be copied into the ```@cmd:ValueConceptLink```" |
+
 
 ###### CS6: Provide consistent vocabulary items
 

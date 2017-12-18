@@ -30,5 +30,9 @@ See section [3.4](./Workflow.md) regarding validation, which implies well-formed
 
 \[priority: high\]
 
+| Note by Menzo |
+| :--- |
+| Could be split: specify encoding used (high), use UTF-8 (middle) |
+
 The encoding of a CMD record, i.e., XML documents in general, doesn’t have to be stated explicitly. It can be provided in various, possibly conflicting ways: via a Byte Order Marker \(BOM\), in the XML declaration of the document or a HTTP header. The best practice is to align all these methods to express an UTF-8 encoding, but include at least the XML declaration to indicate the encoding used.
 
