@@ -26,7 +26,15 @@ Note that using English names for your components, elements and attributes does 
 
 \[priority: low\]
 
+| Note by Susanne |
+| :--- |
+| Priority should be middle, because it's connected to M1 |
+
 When naming elements, attributes and in particular components, be verbose to make sure any metadata modeller or creator understands their purpose. For example "SignLanguageCorpus" is more likely to be understood than "SL-Corpus". Some very common and generally understood abbreviations can be used, such as "info" for information or "param" for parameter.
+
+| Note by Susanne |
+| :--- |
+| "verbose to a reasonable extent"? |
 
 To some degree, exceptions can also be made for the names of projects or institutions, in particular if the abbreviation constitutes the common reference to such an entity and the full name is rather long \(e.g. "Institut für Deutsche Sprache" versus IDS\). In general, this only applies to the profile level. Reusable components should be defined to be reusable across institutions and projects and the naming should reflect that.
 
@@ -39,6 +47,10 @@ The same goes for formats or standards that are referenced, for example in the c
 Unless strictly necessary, do not use terminology or name variations that link a component or one of its constituents to your project. If you create an extended version of an existing component, for example by adding an element or attribute, do not include your project name in the name of your new component unless the adaptation completely restricts its usage to the context of your project. You can use the 'group' property of component to distinguish new components from similarly named existing ones, and include the name of your project in there, if desired.
 
 #### Naming patterns {#naming-patterns}
+
+| Note by Susanne |
+| :--- |
+| There's only this one subtitle and we've reached quite a deep level of subtitles here. Maybe include this in the title of C5? "C5: Naming patterns: Aim for ..." |
 
 ###### C5: Aim for a uniform naming pattern but don't let it stand in the way of using existing components
 
@@ -127,6 +139,12 @@ A CLAVAS vocabulary can be used as a closed or open vocabulary. Use an open voca
 Furthermore, the CLARIN Component Registry offers the option to provide patterns conveying conventions for the style of value strings or to specify the datatype of a value \(e.g. if it should be a date, time, integer, or boolean\)\(see [Constraints and value schemes](#constraints-and-value-schemes)\). If none of the above ways is feasible, it should be considered to use means for checking, external to the CMDI infrastructure \(e.g. Schematron constraints\) while keeping the CMDI profile unrestrictive with regard to element and attribute values.
 
 ###### C13: Make use of @cmd:ConceptLink {#c13}
+
+\[priority: medium\] \[_TODO: check: CMDValidate_\]
+
+| Note by Susanne |
+| :--- |
+| "Provide a concept link for each vocabulary item" |
 
 A vocabulary included in CMDI might consist of a link to an external vocabulary \(in general a CLAVAS vocabulary\) or an enumeration of vocabulary items. In case of the latter, add a Concept Link to each item of the proposed vocabulary to determine its semantics \(see [C14](#c14)\).
 

@@ -6,6 +6,10 @@ Although the guide will express the best practices in strict wording, it is poss
 2. _Medium priority_: default priority of a best practice, which means it can be broken if you have good local \(technical or organizational\) reasons to deviate;
 3. _Low priority_: a CMD record meeting this best practice is better adapted to the CLARIN infrastructure, but not following it will not have bad consequences.
 
+| Note by Menzo |
+| :--- |
+| ground principles of CMDI: 1\) components, 2\) generic as possible specific as needed \(reusable\), 3\) explicit semantics |
+
 Best practices with a _high_ priority should be followed. If a best practice with a medium level priority is not followed the reasons why should always be documented.
 
 Compliance with some best practices can be \(partially\) assessed automatically. CLARIN provides the following tools and services:
@@ -16,19 +20,15 @@ Compliance with some best practices can be \(partially\) assessed automatically.
 
 The functionalities of the two more low level validators are being integrated into the CLARIN curation module to provide a single service for CMD quality assessment _\[TODO\]_.
 
+| Note by Menzo |
+| :--- |
+| @Matej: is "are being integrated into" not a too strong claim? |
+
 Some best practices have a direct relationship with the CLARIN B Centre requirements \([CE-2013-0095](http://hdl.handle.net/11372/DOC-78)\), which is indicated next to the priority. A CLARIN B Centre will have to meet such a requirement and the best practice.
 
+[^1]: See [https://github.com/clarin-eric/cmd-validate/releases](https://github.com/clarin-eric/cmd-validate/releases)
 
+[^2]: See [https://github.com/clarin-eric/cmdi-instance-validator/releases](https://github.com/clarin-eric/cmdi-instance-validator/releases)
 
-
-
-
-
-
-
-[^1]: See https://github.com/clarin-eric/cmd-validate/releases
-
-[^2]: See https://github.com/clarin-eric/cmdi-instance-validator/releases
-
-[^3]: See https://clarin.oeaw.ac.at/curate/
+[^3]: See [https://clarin.oeaw.ac.at/curate/](https://clarin.oeaw.ac.at/curate/)
 
