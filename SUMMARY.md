@@ -21,6 +21,7 @@
   * [Granularity](common_approachesproblems/granularity.md)
   * [Licensing](common_approachesproblems/licensing.md)
   * [Common use cases](common_approachesproblems/common_use_cases.md)
+  * [Optimising for discoverability](optimising-for-discoverability.md)
 * [Recommendations](recommendations/README.md)
   * [Recommended components](recommendations/recommended_components.md)
   * [Recommended profiles](recommendations/recommended_profiles.md)
