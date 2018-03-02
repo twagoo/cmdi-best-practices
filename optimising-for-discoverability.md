@@ -13,9 +13,17 @@ To provide some context, we will first enumerate a number of possible types of s
 * A user performs a search using a **general purpose search engine** \(such as Google\) that crawls web pages and other online content, using salient keywords that match the metadata and/or content of the resource.
 * A resource is **referenced** in a paper, in online content such as a website or blog post, or included in a collection that is consumed by a user, and hence discovered.
 
+### Metadata formats and representation
+
 \[Metadata formats \('home' respository may have a more optimal representation\)\]
 
+### Metadata completeness and VLO facets
+
 \[Attend to all facets \(search facets and display facets -- e.g. make sure a title of a resource is always provided\)\]
+
+\[Self-sufficiency of metadata records\]
+
+### Values and semantics
 
 \[Consider given vocabularies, e.g. resource type \(including links where to find these\)\]
 
@@ -23,9 +31,11 @@ To provide some context, we will first enumerate a number of possible types of s
 
 \[Avoid ambiguities in modelling that can't be resolved technically \(e.g. &lt;date&gt; in very generally named branches\)\]
 
-\[Self-sufficiency of metadata records\]
+\[Avoid non-alphanumeric characters in titles \([Discussion \#19](https://www.gitbook.com/book/cmdi-taskforce/cmdi-best-practices/discussions/19)\)\]
+
+### Links and context
 
 \[Importance of landing page\]
 
-\[Avoid non-alphanumeric characters in titles \([Discussion \#19](https://www.gitbook.com/book/cmdi-taskforce/cmdi-best-practices/discussions/19)\)\]
+
 
