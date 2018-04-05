@@ -21,7 +21,5 @@
   * [Granularity](common_approachesproblems/granularity.md)
   * [Licensing](common_approachesproblems/licensing.md)
   * [Common use cases](common_approachesproblems/common_use_cases.md)
-* [Recommendations](recommendations/README.md)
-  * [Recommended components](recommendations/recommended_components.md)
-  * [Recommended profiles](recommendations/recommended_profiles.md)
+  * [Dealing with uncertainty](common_approachesproblems/dealing-with-uncertainty.md)
 
