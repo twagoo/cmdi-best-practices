@@ -29,11 +29,15 @@ A repository may simply export its metadata to **Dublin Core **. This is one of 
 
 Finally, be aware of any context that your repository solution provides that is not directly encoded in the metadata of a single resource. The VLO, and the CLARIN infrastructure in general, will generally assume that a metadata record is self-sufficient. For example, if the name of your organisation is not included in a record, it will also not be associated with the described resources by the VLO. A metadata hierarchy might provide additional context, such as project information, collection details or legal status, but this will not cause this information to be presented in the context of the resource in a salient way unless it is explicitly included in its own metadata record.
 
+To find out how well your metadata record will be represented in the VLO you may consult the **Metadata Curation Module**. Here, you are able to upload your metadata record, browse through a list of available profiles or upload a profile URL in order to obtain a "score" and an overview of facet coverage for the respective profile or file.
+
 ### Values and semantics
 
 \[Consider given vocabularies, e.g. resource type \(including links where to find these\)\]
 
-\[Ensure conformity among records of on collection/institution \(e.g. naming conventions\)\]
+\[Ensure conformity among records of a collection/institution \(e.g. naming conventions\)\]
+
+Facet "collection": If you are preparing a set of records that belong to one collection, this collection can be specified in the CMDI header in each record and thus made findable via the VLO facet. If so, make sure that the collection is named homogeneously accross records so that the collection name will appear only once in the VLO collection facet.
 
 \[Avoid ambiguities in modelling that can't be resolved technically \(e.g. &lt;date&gt; in very generally named branches\)\]
 
