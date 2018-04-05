@@ -4,15 +4,7 @@ editor: Thomas
 
 ## Problem indicators \(“bad smells”\) {#problem-indicators-bad-smells}
 
-|TODO|
-|----|
-|No “recommended” components as smell?|
-
 \(Bad\) Smells are used as simple indicators for bad or inefficient designs \(typically in programming languages\). To identify a specific “smell” in a profile does not necessarily mean that the design is broken and should be replaced. Instead it should be seen as a warning sign that there may be a problem which should be checked. Measures to eliminate actual problems by changing the design are often called refactorings. In the following some “smells” and refactorings \(adapted from their counterpart in object oriented programming\) are shortly discussed:
-
-| Note by Susanne |
-| :--- |
-| Should we rather move these general remarks ("\(Bad\) Smells are  ... often called refactorings") to the "How to use this Guide" section? |
 
 * A _Standalone profile_ does not reuse any components or only to a little degree. In this case it may be useful to evaluate the existing component stock to find reuse candidates.
 * If a profile allows the description of a more general resource type or allows the description of resource aspects that most likely won’t be used, one speaks of _Speculative Generality_. Another indication is an extensive use of optional elements/components \(cardinality of 0\). As a consequence a typical metadata file will only instantiate a very small subset of all possible elements or components. In this case it may be useful to remove unnecessary elements or components to reduce the complexity of the overall profile. Be aware that this may be an acceptable design for profiles that are primarily used for representing metadata from other formats. Also, confer [C6](/modelling_component_metadata/components.md#c6) above.
