@@ -4,7 +4,6 @@
 * [Scope](introduction/scope.md)
 * [How to use this Guide](how-to-use-this-guide.md)
 * [Outline](introduction/outline.md)
-* [CMDI Workflow](cmdi_workflow.md)
 * [Modelling Component Metadata](modelling_component_metadata/README.md)
   * [Components](modelling_component_metadata/components.md)
   * [Profiles](modelling_component_metadata/profiles.md)
