@@ -39,7 +39,7 @@ To find out how well your metadata record will be represented in the VLO you may
 
 Facet "collection": If you are preparing a set of records that belong to one collection, this collection can be specified in the CMDI header in each record and thus made findable via the VLO facet. If so, make sure that the collection is named homogeneously accross records so that the collection name will appear only once in the VLO collection facet.
 
-\[Avoid ambiguities in modelling that can't be resolved technically \(e.g. &lt;date&gt; in very generally named branches\)\]
+\[Modeller's responsibility to avoid ambiguities that can't be resolved technically \(e.g. &lt;date&gt; in very generally named branches: date of what \(creation/description/submission/modification\)?\): naming and most importantly concept/context\]
 
 \[Avoid non-alphanumeric characters in titles \([Discussion \#19](https://www.gitbook.com/book/cmdi-taskforce/cmdi-best-practices/discussions/19)\)\]
 
