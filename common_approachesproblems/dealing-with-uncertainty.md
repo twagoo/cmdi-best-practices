@@ -6,17 +6,13 @@ In many cases one has to model for uncertainty. For example, the creation date o
 <cmdp:birthYear certainty="uncertain">1180</cmdp:birthYear>
 ```
 
-Note that in many cases making an element optional is a valid modelling decision for cases where information might not be available. However, preferably this would be reserved for
+Note that in many cases making an element optional is a valid modelling decision for cases where information might not be available. However, preferably this would be reserved for the element being not applicable.
 
 ```
 <cmdp:birthYear confidence="not found"/>
 ```
 
 Notice that this provides more information than leaving out the unknown birth year. The confidence value tells us that one has been looking for the birth year but it has not been found yet. Leaving out the birth year would mean in this case that its unknown, but has also not been researched.
-
-| Note by Menzo |
-| :--- |
-| This is analogous to the ambiguity of NULL values in databases, but that's probably too technical to refer to. See also [https://trac.clarin.eu/wiki/CmdiNillableFields](https://trac.clarin.eu/wiki/CmdiNillableFields) |
 
 
 
