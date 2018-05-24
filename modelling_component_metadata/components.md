@@ -136,10 +136,6 @@ In CMDI the semantics of all building blocks, e.g., components, elements and val
 
 \[priority: high\] \[CLARIN B Centre requirement: 6.9.b\] \[check: CMDValidate\]
 
-| Note by Twan |
-| :--- |
-| I agree that this is high priority but as its quite hard to get new concepts in the CCR \(currently\), a lot of people will end up violating this too some degree |
-
 As a basis the semantics of most values in a metadata record should be made explicit. This is done by adding concept links to both elements and attributes. And where possible to the value itself, i.e., adding concept links to closed/open vocabulary items. If a semantically matching concept cannot be found a new or modified concept can be requested \(see [C19](#c19)\).
 
 Reusing existing components will, in many cases, bring along concept links, potentially already optimised for mapping to VLO facets. In case you have to assess this mapping yourself it is good to inspect the existing VLO concept to facet mapping at [vlo.clarin.eu/mapping](http://vlo.clarin.eu/mapping).
