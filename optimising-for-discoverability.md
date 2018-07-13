@@ -37,7 +37,7 @@ To find out how well your metadata record will be represented in the VLO you may
 
 \[Ensure conformity among records of a collection/institution \(e.g. naming conventions\)\]
 
-Facet "collection": If you are preparing a set of records that belong to one collection, this collection can be specified in the CMDI header in each record and thus made findable via the VLO facet. If so, make sure that the collection is named homogeneously accross records so that the collection name will appear only once in the VLO collection facet. []
+Facet "collection": If you are preparing a set of records that belong to one collection, this collection can be specified in the CMDI header in each record and thus made findable via the VLO facet. If so, make sure that the collection is named homogeneously accross records so that the collection name will appear only once in the VLO collection facet. [Prefix collection]
 
 \[Modeller's responsibility to avoid ambiguities that can't be resolved technically \(e.g. &lt;date&gt; in very generally named branches: date of what \(creation/description/submission/modification\)?\): naming and most importantly concept/context\]
 
@@ -48,5 +48,5 @@ Facet "collection": If you are preparing a set of records that belong to one col
 \[Importance of landing page\]
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODY2MzU4MDA4XX0=
+eyJoaXN0b3J5IjpbLTEyNzQxNzMyOTZdfQ==
 -->
