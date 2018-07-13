@@ -148,13 +148,9 @@ This top-down approach is the preferred way of describing resource hierarchies, 
 
 This is a bottom-up method of describing resource hierarchies, and constitutes an alternative or additional approach to that described in [E17](#e17-use-resourceproxy-to-express-partitive-relationships-between-the-described-resource-as-a-whole-and-its-constituent-resources). So far, IsPartOf is not widely used nor well supported by the CLARIN infrastructure, hence the [E17](#e17-use-resourceproxy-to-express-partitive-relationships-between-the-described-resource-as-a-whole-and-its-constituent-resources) approach should be preferred whenever feasible. See also [Granularity](/common_approachesproblems/granularity.md).
 
-###### E19. Do not use ResourceRelation to relate resources other than those listed in ResourceProxyList {#e19}
+###### E19. Use the right mechanism to define relations in your metadata {#e19}
 
-\[priority: high\] \[check: CMDI Instance Validator\]
-
-| Note by Menzo |
-| :--- |
-| Needs to be reformulated. As phrased now this is covered by the XSD validation, i.e. is on the spec level. Maybe "relate resources (incl. other CMDI records) using the right mechanism" |
+\[priority: high\]
 
 Note that ResourceRelation is strictly connected to ResourceProxy in the sense that both resources related by ResourceRelation must be instances of ResourceProxy. Any other relationships, e.g.
 
@@ -171,8 +167,6 @@ must be expressed using suitable components and elements available in the chosen
 \[priority: low\] \[TODO: check: CMDI Instance Validator\]
 
 See [X2](/authoring_component_metadata_records/general_xml.md#x2).
-
-
 
 [^1]: See [https://www.clarin.eu/content/federated-content-search-clarin-fcs](https://www.clarin.eu/content/federated-content-search-clarin-fcs)
 
