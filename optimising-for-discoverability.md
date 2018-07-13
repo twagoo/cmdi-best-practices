@@ -47,3 +47,6 @@ Facet "collection": If you are preparing a set of records that belong to one col
 
 \[Importance of landing page\]
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMjI1Nzk3MTQ4XX0=
+-->
