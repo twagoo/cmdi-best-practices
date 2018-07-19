@@ -19,6 +19,7 @@ One should keep in mind that the VLO and other metadata aggregators by design ha
 
 * \[sufficient context\]
 * \[use of broadly accepted vocabularies\]
+* \[SH 2018-07-19:\]\[coverage of categories for the intended harvesting platforms\]
 * ...
 
 ### Metadata completeness and VLO facets
