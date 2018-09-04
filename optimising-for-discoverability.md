@@ -43,6 +43,8 @@ To find out how well your metadata record will be represented in the VLO you may
 
 ### Values and semantics
 
+
+
 \[Consider given vocabularies, e.g. resource type \(including links where to find these\)\]
 
 \[Ensure conformity among records of a collection/institution \(e.g. naming conventions\)\]
