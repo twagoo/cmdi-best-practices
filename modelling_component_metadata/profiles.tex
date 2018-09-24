@@ -1,0 +1,123 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\date{}
+
+\begin{document}
+
+\subsection{Profiles}\label{profiles}
+
+P1: Reuse components
+
+{[}priority: high{]} {[}\emph{TODO: check: CMDValidate}{]}
+
+A main idea behind the CMD framework is the use of existing components
+to reduce the amount of work and to improve the general quality of
+profiles by benefiting from existing work of more experienced users.
+Therefore it is strongly encouraged to check the existing stock of
+profiles and components regarding their usefulness for your specific
+needs.
+
+As it is very likely that at least some of the aspects of every resource
+type are comparable to other resources (e.g.~standard descriptive
+metadata like resource name, license or providing organisation), these
+are natural candidates for a successful reuse. A profile that does not
+use existing components or that does not make use of any non-inline
+components contradicts the general idea of CMDI and is therefore
+undesirable. For a fast insight on which components are recommended by
+experienced profile designers, these components are included in the
+group ``recommended'' and can be displayed in the standard component
+registry {[}\emph{TODO}{]}. For a similar reason it is advised to
+compare a new design with recommended profiles. (See section
+\href{/recommendations/README.md}{Recommendations}.)
+
+P2: One component for one aspect
+
+{[}priority: medium{]}
+
+Different components in a profile should be exclusive concerning their
+scope. This means that every relevant aspect of a resource type should
+be dealt with in a single (possibly complex) component to avoid semantic
+overlaps between different parts of a profile.
+
+P3: Support broad user groups
+
+{[}priority: medium{]}
+
+In large federated research infrastructures, a resource may be relevant
+for user groups that were not primarily targeted and that may lack
+information about the context in which a resource was originally
+created. Therefore every resource description should be self-contained
+and all information that may seem to be implicit (like language, age,
+size, format or origin of a resource) should be made explicit to
+facilitate the use of a resource in new scientific contexts.
+
+P4: Use Documentation
+
+{[}priority: medium{]} {[}\emph{TODO: partially check: CMDValidate}{]}
+
+CMDI allows extensive documentation of every part of a CMD metadata
+schema. This also holds for CMD Profiles. It is strongly encouraged to
+add a meaningful description to a profile, containing a general
+explanation of the purpose of the profile. This description should also
+be understandable for users without expert knowledge in the specific
+field. Domain-specific terminology may not be suitable for a proper
+understanding. In this case a general and a domain specific description
+could be helpful. If the profile has a specific relevance for a concrete
+scientific domain (like lexicography or phonetics), this information
+should be specified for the profile too.
+
+TODO: P5: minimal semantic coverage
+
+{[}priority: medium{]} {[}\emph{TODO: check:CMDValidate}{]}
+
+\emph{A profile should (at least via concept links) cover a, agreed upon
+by the CLARIN community, minimal set of concepts, e.g.~language and
+license.}
+
+\end{document}

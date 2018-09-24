@@ -1,0 +1,85 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\date{}
+
+\begin{document}
+
+\subsection{Scope}\label{scope}
+
+The target audience for the Best Practice guide includes 1) CMD
+modellers who select or create components and profiles to describe
+certain language resources, 2) developers who create metadata
+converters, forms or editors to create records that comply with these
+profiles, and 3) the group of CMD creators who create records ``by
+hand'', i.e.~using no other tooling than an XML editor or even a plain
+text editor. End users of the infrastructure are, in general, not
+directly exposed to CMDI, but if so should be fully guided by a
+user-friendly interface (with its own user guide) and shielded from the
+technical details. Furthermore, using this Best Practice guide will
+require a basic understanding of CMDI - it is not intended as a
+tutorial.\footnote{For a tutorial, please refer to
+  \url{https://www.clarin.eu/cmdi\#training}}
+
+The CLARIN infrastructure can deal with any valid CMD record that is
+based on a profile from its Component Registry. The technical
+specification (CE-2016-0880) acts as the core reference with its
+declarative definitions and examples of valid CMD profiles, components
+and records. In contrast, the CMDI Best Practice guide is process
+oriented and aims to guide the work involved in constructing valid and
+high quality CMD components, profiles and records. The scope of the best
+practices goes beyond those purely schematic constraints and ranges from
+modelling guidelines, e.g. ``prefer elements over attributes'', to
+rather low-level technical guidelines, e.g. ``use the UTF-8 encoding for
+your CMD records''. In general, the CLARIN infrastructure will extract
+information more efficiently from CMD records that meet these best
+practices and, hence, provide the end users improved access to those
+records, the context from which they originate and the resources they
+provide.
+
+\end{document}

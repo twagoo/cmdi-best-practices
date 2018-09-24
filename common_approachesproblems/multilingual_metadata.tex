@@ -1,0 +1,86 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\date{}
+
+\begin{document}
+
+\subsection{Multilingual metadata}\label{multilingual-metadata}
+
+Multilinguality should be considered for components and elements. If a
+language other than English is allowed/possible, an English version
+should be provided wherever feasible. A content language tag
+(\texttt{@xml:lang} attribute) should be used to determine the language
+of the respective metadata item. The choice of the language tag should
+be based on the
+\href{https://www.w3.org/International/questions/qa-choosing-language-tags}{W3C
+recommendations on this topic}, i.e.~use an
+\href{https://tools.ietf.org/rfc/bcp/bcp47.txt}{BCP 47}
+\href{https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry}{language
+tag} (see also
+\href{/authoring_component_metadata_records/the_component_section.md\#cs3}{CS3}).
+
+All elements allowing for values that do not come from an (implicit or
+explicit) vocabulary are good candidates for being multilingual.
+Especially titles and descriptions should be multilingual. Provide
+English variants first, or if not feasible start with the `native'
+language followed by English. Set the content language tag
+(\texttt{@xml:lang} attribute) for all variants, including English
+and/or the `native' language, i.e., do not have an multilingual element
+without an \texttt{@xml:lang} attribute. Also do not allow multiple
+variants for a language, e.g., there should be only one English or
+native variant.
+
+When an external vocabulary is used they should provide at least an
+english label, but they might provide additional labels in other
+languages. When the label is also the value, the english label should be
+preferred, unless the (local) primary audience of the record is native.
+Renderers of the record can look up the additional labels to deal with a
+multilingual setup.
+
+\end{document}

@@ -1,0 +1,88 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\date{}
+
+\begin{document}
+
+\subsection{Dealing with uncertainty}\label{dealing-with-uncertainty}
+
+In many cases one has to model for uncertainty. For example, the
+creation date of a document may not be known or only by approximation.
+Rather than making a field for such information optional, it might be
+desirable to provide the metadata creator with an option to make this
+uncertainty explicit. A ``string'' typed field provides this option
+(i.e.~it allows the metadata creator to enter ``?'' or ``unknown'') but
+does so at the cost of value ``safety'' - in this example it does not
+enforce a standardised date format. A better approach is to require a
+value of a more specific type if applicable, for example a date or
+integer. Alternatively a vocabulary or pattern can be used to constrain
+the values that may be entered, optionally including a literal value
+like `Unknown'. You can also add an (optional) attribute with type
+``boolean'' or a vocabulary to allow the metadata creator to specify the
+level of uncertainty.
+
+\begin{verbatim}
+<cmdp:birthYear certainty="uncertain">1180</cmdp:birthYear>
+\end{verbatim}
+
+Note that in many cases making an element optional is a valid modelling
+decision for cases where information might not be available. However,
+preferably this would be reserved for the element being not applicable.
+
+\begin{verbatim}
+<cmdp:birthYear confidence="not found"/>
+\end{verbatim}
+
+Notice that this provides more information than leaving out the unknown
+birth year. The confidence value tells us that one has been looking for
+the birth year but it has not been found yet. Leaving out the birth year
+would mean in this case that its unknown, but has also not been
+researched.
+
+\end{document}

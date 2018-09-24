@@ -1,8 +1,0 @@
----
-editor: Menzo
----
-
-# Recommendations {#recommendations}
-
-
-

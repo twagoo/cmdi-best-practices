@@ -1,0 +1,148 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{longtable,booktabs}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\date{}
+
+\begin{document}
+
+\subsection{\texorpdfstring{Problem indicators (``bad
+smells'')}{Problem indicators (bad smells)}}\label{problem-indicators-bad-smells}
+
+\begin{longtable}[c]{@{}l@{}}
+\toprule
+TODO\tabularnewline
+\midrule
+\endhead
+No ``recommended'' components as smell?\tabularnewline
+\bottomrule
+\end{longtable}
+
+(Bad) Smells are used as simple indicators for bad or inefficient
+designs (typically in programming languages). To identify a specific
+``smell'' in a profile does not necessarily mean that the design is
+broken and should be replaced. Instead it should be seen as a warning
+sign that there may be a problem which should be checked. Measures to
+eliminate actual problems by changing the design are often called
+refactorings. In the following some ``smells'' and refactorings (adapted
+from their counterpart in object oriented programming) are shortly
+discussed:
+
+\begin{longtable}[c]{@{}l@{}}
+\toprule
+\begin{minipage}[b]{0.07\columnwidth}\raggedright\strut
+Note by Susanne
+\strut\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.07\columnwidth}\raggedright\strut
+Should we rather move these general remarks (``(Bad) Smells are \ldots{}
+often called refactorings'') to the ``How to use this Guide'' section?
+\strut\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{itemize}
+\tightlist
+\item
+  A \emph{Standalone profile} does not reuse any components or only to a
+  little degree. In this case it may be useful to evaluate the existing
+  component stock to find reuse candidates.
+\item
+  If a profile allows the description of a more general resource type or
+  allows the description of resource aspects that most likely won't be
+  used, one speaks of \emph{Speculative Generality}. Another indication
+  is an extensive use of optional elements/components (cardinality of
+  0). As a consequence a typical metadata file will only instantiate a
+  very small subset of all possible elements or components. In this case
+  it may be useful to remove unnecessary elements or components to
+  reduce the complexity of the overall profile. Be aware that this may
+  be an acceptable design for profiles that are primarily used for
+  representing metadata from other formats. Also, confer
+  \href{/modelling_component_metadata/components.md\#c6}{C6} above.
+\item
+  \emph{Another kind of Speculative Generality} is creating a profile
+  that will fit a whole set of different resource types, where a
+  specific instance file will only instantiate (resource-)specific
+  parts. In this case it may be useful to extract resource type
+  independent aspects into a single component and create a profile for
+  every resource type while reusing this common component.
+\item
+  If inline parts of a profile seem to be applicable for other resource
+  types as well, it may be a useful to \emph{extract} these parts into
+  an independent \emph{component} to promote its reuse in other
+  profiles.
+\item
+  A \emph{Lazy Component} is a non-inline component that is used in a
+  profile of which only small parts are actually intended to be used. In
+  this case it may be reasonable to only include the used elements of
+  this component in the profile.
+\item
+  The name of a profile should give even inexperienced users some
+  understanding about the described resource type. If this is not the
+  case it may be useful to \emph{rename} the \emph{profile}. If a more
+  detailed description is necessary, this can be specified in the
+  description section of the profile.
+\item
+  Profiles that refer to external resources via elements or attributes
+  of type `anyURI' may be candidates for a redesign where these
+  references may be explicitly specified in resource proxy elements in
+  the CMD resource section (also see recommendations with respect to
+  resource proxies in metadata records).
+\item
+  In general it is recommended to store metadata content in elements
+  instead of using attributes, as this often leads to a more
+  comprehensible design and eases automatic extraction of content. The
+  extensive use of attributes for storing metadata content may be an
+  indicator for a necessary redesign. In those cases the usage of
+  elements or even the creation of a new metadata component may be
+  reasonable. See also
+  \href{/modelling_component_metadata/components.md\#c8}{C8} above.
+\end{itemize}
+
+\end{document}

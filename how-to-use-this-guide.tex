@@ -1,0 +1,139 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{longtable,booktabs}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\date{}
+
+\begin{document}
+
+\subsection{How to use this Guide}\label{scope}
+
+Although the guide will express the best practices in strict wording, it
+is possible, and sometimes even allowed to break a best practice. To
+indicate the impact of breaking a best practice a priority level is
+given:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \emph{High priority}: a CMD record not following this best practice
+  severely counters the ground principle of CMDI \emph{{[}TODO:
+  reference{]}}, e.g.~reusable components with explicit semantics, or
+  common best practices for resources on the web, e.g.~URLs should be
+  resolvable not dead links \emph{{[}TODO: reference{]}};
+\item
+  \emph{Medium priority}: default priority of a best practice, which
+  means it can be broken if you have good local (technical or
+  organizational) reasons to deviate;
+\item
+  \emph{Low priority}: a CMD record meeting this best practice is better
+  adapted to the CLARIN infrastructure, but not following it will not
+  have bad consequences.
+\end{enumerate}
+
+\begin{longtable}[c]{@{}l@{}}
+\toprule
+\begin{minipage}[b]{0.07\columnwidth}\raggedright\strut
+Note by Menzo
+\strut\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.07\columnwidth}\raggedright\strut
+ground principles of CMDI: 1) components, 2) generic as possible
+specific as needed (reusable), 3) explicit semantics
+\strut\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Best practices with a \emph{high} priority should be followed. If a best
+practice with a medium level priority is not followed the reasons why
+should always be documented.
+
+Compliance with some best practices can be (partially) assessed
+automatically. CLARIN provides the following tools and services:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  CMDValidator:\footnote{See
+    \url{https://github.com/clarin-eric/cmd-validate/releases}} The
+  validator for CMD components and profiles is in general used via the
+  Component Registry;
+\item
+  CMDI Instance Validator:\footnote{See
+    \url{https://github.com/clarin-eric/cmdi-instance-validator/releases}}
+  The corresponding validator for CMD records;
+\item
+  CLARIN curation module:\footnote{See
+    \url{https://clarin.oeaw.ac.at/curate/}} This service provides
+  insight into the quality of CMD profiles, records and endpoints, which
+  can be accessed directly via their URLs.
+\end{enumerate}
+
+The functionalities of the two more low level validators are being
+integrated into the CLARIN curation module to provide a single service
+for CMD quality assessment \emph{{[}TODO{]}}.
+
+\begin{longtable}[c]{@{}l@{}}
+\toprule
+Note by Menzo\tabularnewline
+\midrule
+\endhead
+@Matej: is ``are being integrated into'' not a too strong
+claim?\tabularnewline
+\bottomrule
+\end{longtable}
+
+Some best practices have a direct relationship with the CLARIN B Centre
+requirements (\href{http://hdl.handle.net/11372/DOC-78}{CE-2013-0095}),
+which is indicated next to the priority. A CLARIN B Centre will have to
+meet such a requirement and the best practice.
+
+\end{document}

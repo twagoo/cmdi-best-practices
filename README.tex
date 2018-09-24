@@ -1,0 +1,77 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\date{}
+
+\begin{document}
+
+\section{Introduction}\label{introduction}
+
+In 2016, both version 1.2\footnote{See https://www.clarin.eu/cmdi1.2} of
+the
+\href{https://www.gitbook.com/book/clarin-eric/cmdi-best-practices/edit\#}{Component
+Metadata} (CMD) Infrastructure (CMDI) and a first complete technical
+specification (CE-2016-0880) of this metadata standard were introduced.
+The new version introduced new possibilities, which have been gradually
+opened up by the ecosystem of tools and registries in CMDI. One of the
+key properties of CMDI is its flexibility, which makes it possible to
+create metadata records closely tailored to the requirements of
+resources and tools/services. However, design and implementation choices
+made at various levels in the CMD lifecycle might influence how well or
+easily a CMD record is processed and its associated resources made
+available in the CLARIN infrastructure. Knowledge on this has
+traditionally been scattered around in various documents, web pages and
+even completely hidden from sight in experts' minds. To make this
+knowledge explicit, the CMDI and Metadata Curation Task Forces have
+teamed up to create this Best Practice guide. Hopefully this guide,
+together with the technical CMDI 1.2 specification, will be a valuable
+knowledge base and will help any (technical) CMDI user to bring her CMD
+records to their full potential use within
+\href{https://www.clarin.eu}{CLARIN}.
+
+\end{document}
