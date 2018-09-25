@@ -15,17 +15,18 @@ like `Unknown'. You can also add an (optional) attribute with type
 ``boolean'' or a vocabulary to allow the metadata creator to specify the
 level of uncertainty.
 
-\begin{verbatim}
+\lstset{language=XML}
+\begin{lstlisting}
 <cmdp:birthYear certainty="uncertain">1180</cmdp:birthYear>
-\end{verbatim}
+\end{lstlisting}
 
 Note that in many cases making an element optional is a valid modelling
 decision for cases where information might not be available. However,
 preferably this would be reserved for the element being not applicable.
 
-\begin{verbatim}
+\begin{lstlisting}
 <cmdp:birthYear confidence="not found"/>
-\end{verbatim}
+\end{lstlisting}
 
 Notice that this provides more information than leaving out the unknown
 birth year. The confidence value tells us that one has been looking for
