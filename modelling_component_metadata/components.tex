@@ -4,7 +4,7 @@
 
 C1: Provide detailed documentation
 
-{[}priority: medium{]} {[}partial check: CMDValidate{]}
+\priority{medium}{[}partial check: CMDValidate{]}
 
 There are various places in a component or profile specification that
 can be used to document your definitions. The \emph{description} of a
@@ -116,7 +116,7 @@ and value schemes}\label{constraints-and-value-schemes}}
 
 C6: Discourage empty string values
 
-{[}priority: low{]} {[}\emph{TODO: check: CMDI Instance Validator}{]}
+\priority{low}\todo{check: CMDI Instance Validator}
 
 When making an element or attribute mandatory and give it the simple
 type ``string'', this should imply the requirement of a non-empty value.
@@ -126,13 +126,13 @@ attribute optional.
 
 C7: Use an appropriately restrictive value scheme
 
-{[}priority: medium{]} {[}check CMDValidate{]}
+\priority{medium}\todo{check: CMDValidate}
 
 Don't use string type if a more specific type can be used.
 
 C8: Prefer elements over attributes
 
-{[}priority: low{]} {[}check: CMDValidate{]}
+\priority{low}\todo{check: CMDValidate}
 
 Attributes generally serve as place to annotate, i.e.~provide
 information about the content of their parent element or component,
