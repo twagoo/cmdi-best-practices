@@ -46,10 +46,12 @@
 \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
 
+\usepackage{nameref}
 \usepackage{xargs}
 \usepackage[colorinlistoftodos,prependcaption]{todonotes}
+\presetkeys{todonotes}{inline}{}
 %inline notes
-\newcommandx{\note}[2][1=]{\todo[inline,linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommandx{\note}[2][1=]{\todo[noinline,linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
 %priority indication - TODO: make a better implementation
 \newcommandx{\priority}[2][1=]{\todo[inline,linecolor=yellow,backgroundcolor=yellow!25,bordercolor=yellow,#1]{Priority: #2}}
 
@@ -73,7 +75,7 @@
 
 \mainmatter
 
-%\input{introduction/cmdi_workflow}
+%\input{introduction/cmdi_workflow} %Work in progress
 
 \chapter{Modelling and authoring component metadata}
 
@@ -99,8 +101,9 @@
 \input{common_approachesproblems/multilingual_metadata}
 \input{common_approachesproblems/granularity}
 \input{common_approachesproblems/licensing}
-\input{common_approachesproblems/common_use_cases}
-\input{common_approachesproblems/optimising-for-discoverability}
+%\input{common_approachesproblems/optimising-for-discoverability} %Work in progress 
 \input{common_approachesproblems/dealing-with-uncertainty}
+
+% Recommendations section left out (abandoned? remove?)
 
 \end{document}
