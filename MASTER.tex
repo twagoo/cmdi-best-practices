@@ -57,6 +57,12 @@
 
 \input{tex/xmllistings}
 
+\usepackage[color]{changebar}
+\usepackage{comment}
+\specialcomment{workinprogress}{\begingroup\cbstart\cbcolor{red}\emph{\color{red}BEGIN WORK IN PROGRESS}\\}{\emph{\color{red}END WORK IN PROGRESS}\cbend\endgroup\\}
+%comment out the following line to exclude sections marked work in progress
+%\excludecomment{workinprogress}
+
 \date{}
 
 \begin{document}
@@ -97,11 +103,10 @@
 
 \chapter{Common approaches and problems}\label{common-approaches-problems}
 
-\input{common_approachesproblems/README}
 \input{common_approachesproblems/multilingual_metadata}
 \input{common_approachesproblems/granularity}
 \input{common_approachesproblems/licensing}
-%\input{common_approachesproblems/optimising-for-discoverability} %Work in progress 
+\input{common_approachesproblems/optimising-for-discoverability}
 \input{common_approachesproblems/dealing-with-uncertainty}
 
 % Recommendations section left out (abandoned? remove?)
