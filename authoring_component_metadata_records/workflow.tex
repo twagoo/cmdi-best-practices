@@ -1,0 +1,30 @@
+\subsection{Workflow}\label{authoring-workflow}
+
+The workflow for creation of CMDI records for hosted resources will depend on the specific conditions and requirements at your centre. CMDI files can be created (semi-)manually (by editing XML files or using tools such as CMDI Maker\footnote{See http://cmdi-maker.uni-koeln.de/, but notice that CMDI Maker only supports 2 profiles!}, COMEDI,\footnote{See http://clarino.uib.no/comedi/} and Arbil\footnote{See
+https://tla.mpi.nl/tools/tla-tools/arbil/, but notice that Arbil is not maintained anymore!} - this will usually be done by the resource owners), or by automatic conversion from existing metadata formats with the usual benefits and disadvantages of manual and automatic data creation respectively.
+
+Concerning metadata quality assessment in the workflow, some aspects can be checked before CMDI is imported into the VLO:
+
+\begin{itemize}
+\tightlist
+\item
+  all CMDI metadata must validate against the profile XSD
+\item
+  manually created CMDI should go through automatic consistency checks
+\item
+  all CMDI metadata should be checked for features that cannot be   covered by the profile XSD - the
+  \href{https://github.com/clarin-eric/cmdi-instance-validator/releases/latest}{CMDI Validator} includes a set of Schematron rules that can be used for   additional specific Schematron checks (and adapted as necessary)
+\item
+  the \href{https://clarin.oeaw.ac.at/curate/}{CLARIN Curation Module}   should be used to assess records
+\end{itemize}
+
+The following aspects on the other hand need to be checked after VLO import:
+
+\begin{itemize}
+\tightlist
+\item
+  appropriateness of all normalized and mapped values for VLO facets (cf.~VLO-mapping) - any mapping issues should be reported via \href{mailto:cmdi@clarin.eu}{\nolinkurl{cmdi@clarin.eu}}
+  \note{Alex: Shouldn't VLO mapping above be a link?}
+\item
+  appropriateness of the display of resource hierarchies, especially in cases where MdSelfLink and/or ResourceProxy values are changed as part of the workflow.
+\end{itemize}

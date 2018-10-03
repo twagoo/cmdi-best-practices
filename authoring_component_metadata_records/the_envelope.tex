@@ -1,0 +1,196 @@
+\subsection{The envelope}\label{the-envelope}
+
+\subsubsection{Header}\label{header}
+
+E1: Include a MdSelfLink
+
+\priority{high CLARIN Centre B requirement: 6.7} \bptodo{check:
+CMDI Instance Validator}
+
+Include a MdSelfLink that resolves to the CMD record hosted at the CLARIN Centre. Including the MdSelfLink is a requirement for CLARIN B Centres (see
+\href{http://hdl.handle.net/1839/00-DOCS.CLARIN.EU-78}{CE-2013-0095} section 6 sub-requirement 7) as is the support of content negotiation for the MdSelfLink (see
+\href{http://hdl.handle.net/1839/00-DOCS.CLARIN.EU-78}{CE-2013-0095} section 7), this allows both humans and machines to see/retrieve the record in its context. The MdSelfLink is also important in the reconstruction of a CMD record (collection) hierarchy (see below).
+
+\label{e2}
+E2: The MdSelfLink should be a Persistent Identifier (PID)
+
+\priority{medium CLARIN B Centre requirement: 6.7}
+\bptodo{check: CMDI Instance Validator}
+
+By giving a CMD record a PID and including it in the MdSelfLink it becomes possible for tools that present the records to the user to provide them with a persistent link suitable as a bookmark that will stand the test of time. This is another requirement for CLARIN B Centres (see
+\href{http://hdl.handle.net/1839/00-DOCS.CLARIN.EU-78}{CE-2013-0095} section 6 sub-requirement 7).
+
+E3: Include a MdCollectionDisplayName
+
+\priority{medium} \bptodo{check: CMDI Instance Validator}
+
+The MdCollectionDisplayName allows grouping of records, e.g.~for display or search, without the need to access or even the existence of an explicit CMD collection record. Including the CLARIN Centre name and a collection name enables users to quickly assess the provenance, scope and context of an individual record. Generic tools, like the VLO, use this information to put a record in context. Use a consistent collection name across records that belong to the same collection and should be presented as such.
+
+E4: Include a matching MdProfile
+
+\priority{high CLARIN B Centre requirement: 6.9.a} \bptodo{check: CMDI Instance Validator}
+
+The MdProfile contains the unique identifier of the used profile in the Component Registry. This element is mandatory in CMDI 1.2 but optional in CMDI 1.1. However, it should always be included and it should match with the XSD (see \hyperref[x1]{X1}. While the reference to the XSD is an absolute URI the MdProfile just needs to contain the identifier, e.g.
+\texttt{clarin.eu:cr1:p\_1361876010680}.
+
+\subsubsection{Resource Proxies}\label{resource-proxies}
+
+\label{e5}
+E5: There should be at least one resource proxy
+
+\priority{high} \bptodo{check: CMDI Instance Validator}
+
+A CMD record describes one or more (collections of) resources. These (collections of) resources, where the minimum is one resource or collection, should be linked to the CMD record via a resource proxy. This allows central tools, like the VLO, to show the user the resources related to the metadata. It is also technically possible, but not preferred (see \hyperref[cs2]{CS2}, to include the resource URLs/PIDs in the component section, however they should always be available as resource proxies.
+
+E6: The URI of a resource proxy should be absolute and resolvable
+
+\priority{high} \bptodo{check: CMDI Instance Validator}
+
+An absolute URI should be used as the value of ResourceRef. This is certainly true for published CMD records. Internally a centre can use relative URLs, but care should be taken to make them absolute when publishing them to the infrastructure.
+
+Also the URI of a resource proxy should be resolvable, i.e.~the resource should be available at that location. However, it might be protected and thus (shibboleth-based) authentication might be required.
+
+\paragraph{Metadata}\label{metadata}
+
+E7: ``Metadata'' type resource proxies should refer to a CMD record
+
+\priority{high} \bptodo{check: CMDI Instance Validator}
+
+The only metadata format used by CLARIN is CMD, so a metadata resource proxy should refer to a CMD record as should be indicated by the MIME type ``application/x-cmdi+xml''.
+
+\label{e8}
+E8: ``Metadata'' type resource proxies should use PIDs
+
+\priority{medium CLARIN B Centre requirement: 6.7}
+\bptodo{check: CMDI Instance Validator}
+
+A CMD record should be available via a PID (with(out) a part identifier) (see \hyperref[e2]{E2} and \href{http://hdl.handle.net/1839/00-DOCS.CLARIN.EU-78}{CE-2013-0095} section 6 sub-requirement 8). General tools, like the VLO, use these links among CMD records to reconstruct the collection hierarchy. To be able to do so it is important that the PID used in the metadata resource proxy of a collection record and the MdSelfLink in the referenced CMD record are equal.
+
+\paragraph{Resource}\label{resource}
+
+\bptodo{Is there an indication of the mime type? Does it match the actual mime type of the response obtained from the resource location?}
+
+\bptodo{The use of format variants.}
+
+E9: Specify the MIME type of a resource
+
+\priority{high} \bptodo{check: CMDI Instance Validator}
+
+Give the MIME type (a.k.a. media type) of the resource. This enables general tools, like the Language Resource Switchboard, to direct users to tools and/or services that can process or display this type of resources. Sometimes the MIME type is too coarse, e.g., for TEI resources, in that case a format variant can be added to fine tune the type. However, the format variant should come from a controlled vocabulary. The MIME type is also part of the HTTP response when resolving the ResourceProxy reference, which should match the MIME type specified.
+
+E10: ``Resource'' type resource proxies should use PIDs
+
+\priority{medium CLARIN B Centre requirement: 7}
+\bptodo{check: CMDI Instance Validator}
+
+A resource should be available via a PID (with or without a part identifier) (see
+\href{http://hdl.handle.net/1839/00-DOCS.CLARIN.EU-78}{CE-2013-0095} section 7).
+
+\paragraph{LandingPage}\label{landingpage}
+
+\label{e11}
+E11: Provide no more than one LandingPage
+
+\priority{medium CLARIN B Centre requirement: 6.8}
+\bptodo{check: CMDI Instance Validator}
+
+The landing page ResourceProxy takes the user to a page within the web interface of the repository in which the CMD record resides. The landing page usually serves as a starting point for more detailed scrutiny of the metadata, e.g.~by displaying core information up front, while providing links to the finer details. There might be multiple interfaces, but general tools, like the VLO, do not have information to choose which one is appropriate. To prevent a possible random selection
+of the landing page resource proxies, which could provide a confusing user experience, provide no more than one landing page.
+
+\paragraph{SearchPage}\label{searchpage}
+
+E12: Provide no more than one SearchPage
+
+\priority{medium} \bptodo{check: CMDI Instance Validator}
+
+The search page resource proxy takes the user to a place where the record/collection/repository can be searched. There might be multiple search interfaces, but general tools, like the VLO, do not have information to choose which one is appropriate. To prevent a possible random selection of the search page resource proxies, which could provide a confusing user experience, provide no more than one search page.
+
+\paragraph{SearchService}\label{searchservice}
+
+E13: Provide no more than one SearchService
+
+\priority{medium} \bptodo{check: CMDI Instance Validator}
+
+The search service resource proxy enables tools to search the
+record/collection/repository. There might be multiple search services, but general tools, like the VLO or the FCS aggregator, do not have information to choose which one is appropriate. To prevent a possible random selection of the search service resource proxies or the use of overlapping services where resources might be returned more than once,
+which could provide a confusing user experience, provide no more than one search service.
+
+E14: A SearchService should support the FCS specification
+
+\priority{medium CLARIN B Centre requirement: 8}
+\bptodo{check: CMDI Instance Validator}
+
+The only search API supported by CLARIN is the one specified in the FCS specification.\footnote{See
+\url{https://www.clarin.eu/content/federated-content-search-clarin-fcs}} Any search service included in a CMD record should thus support this specification.
+
+\subsubsection{Journal Proxies}\label{journal-proxies}
+
+Not used by CLARIN.
+
+\subsubsection{Resource Relations}\label{resource-relations}
+
+\note{Alex: There was a bullet list with checkboxes here with links to the CLARIN trac. I assume this is only for internal reference?}
+
+% \begin{itemize}
+% \item
+%  {[} {]} See \url{https://trac.clarin.eu/wiki/VLO-Taskforce/Relations}
+% \item
+%  {[} {]} See
+%  \url{https://trac.clarin.eu/wiki/CMDI\%201.2/Resource\%20proxies/ResourceRelation}
+% \end{itemize}
+
+E15: Use ResourceRelation to express any significant binary
+relationships among resources listed in ResourceProxyList
+
+\priority{low}
+
+Each ResourceRelation instance must reference the two related resources and be defined by a relationship type. Relationship types should be assigned a concept link describing its meaning, see also \hyperref[c12]{C12}. When deciding which relationships should be explicitly represented, consider relations which may be useful in several use cases. Some examples of typical or relevant relationships between two resources R1 and R2 include: \emph{R1 annotates R2}, \emph{R1 transcribes R2}, \emph{R1 is parallel to R2} (e.g.~in a parallel corpus listing each language file as separate resources), and others.
+
+E16: Add roles to both relationship participants when considered useful
+
+\priority{medium} \bptodo{check: CMDI Instance Validator}
+
+To convey the full nature of the relationship between two resources, it is sometimes desirable to assign roles to the related parties. If so, it is best practice to assign roles to both parties (not only one). Moreover, each role should be assigned a concept link to express its meaning, see also \hyperref[c14]{C14}.
+
+\label{e17}
+E17: Use ResourceProxy to express partitive relationships between the described resource as a whole and its constituent resources.
+
+\priority{medium}
+
+If your resource is decomposed into separate parts, each child resource should be listed as a ResourceProxy instance in the ResourceProxyList. For any child resource having its own CMD record, the corresponding ResourceProxy should be of type Metadata, and its ResourceRef should be set to the MdSelfLink of its CMD record. See also \hyperref[e5]{E5}-\hyperref[e8]{E8}.
+
+This top-down approach is the preferred way of describing resource hierarchies, as it is generally supported throughout the core CLARIN infrastructure. See also section \nameref{granularity}.
+
+E18: IsPartOf may be used to express a partitive relation between the described resource as a whole and a larger resource or collection
+
+\priority{low} \bptodo{check: CMDI Instance Validator}
+
+This is a bottom-up method of describing resource hierarchies, and constitutes an alternative or additional approach to that described in \hyperref[e17]{E17}. So far, IsPartOf is not widely used nor well supported by the CLARIN infrastructure, hence the \hyperref[e17]{E17} approach should be preferred whenever feasible. See also section \nameref{granularity}.
+
+E19. Use the right mechanism to define relations in your metadata
+
+\priority{high}
+
+Note that ResourceRelation is strictly connected to ResourceProxy in the sense that both resources related by ResourceRelation must be instances of ResourceProxy. Any other relationships, e.g.
+
+\begin{itemize}
+\tightlist
+\item
+  between ResourceProxy instances and the described resource as a whole or other (external) resources,
+\item
+  non-partitive relations between the described resource as a whole and other (external) resources, or
+\item
+  relations between ResourceProxy instances and other entities mentioned in the CMD record, e.g.~persons or institutions
+\end{itemize}
+
+must be expressed using suitable components and elements available in the chosen profile, if any. If no applicable mechanism is available in the current profile, consider extending it with additional components, for instance some dedicated relationship component.
+
+\subsubsection{Foreign attributes}\label{foreign-attributes}
+
+\bptodo{
+TODO: E20: Delete foreign attributes before providing
+
+\priority{low} \bptodo{check: CMDI Instance Validator}
+
+See \hyperref[x2]{X2}.
+}

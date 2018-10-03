@@ -1,8 +1,0 @@
----
-editor: Twan
----
-
-## Licensing {#licensing}
-
-…
-

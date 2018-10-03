@@ -1,1 +1,0 @@
-# Authoring Component Metadata Records {#authoring-component-metadata-records}

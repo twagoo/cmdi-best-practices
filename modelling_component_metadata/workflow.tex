@@ -1,0 +1,56 @@
+\subsection{Workflow}\label{modelling-workflow}
+
+When developing a profile for a resource type hosted in your centre's repository,
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  First specify the requirements (e.g.~relevant information,
+  compatibility with existing archive standards or formats commonly used for specific resource types).
+\begin{itemize}
+\tightlist
+\item
+  If you will be creating profiles for different resource types, a \emph{modular approach} is recommended, where you e.g.~re-use one component for general information and/or a general collection component within all profiles.
+\end{itemize}
+
+\item
+  To find existing profiles and components on which your profile could be based, check the   \href{https://catalog.clarin.eu/ds/ComponentRegistry}{CLARIN Component Registry} and assess suitable candidates with the
+  \href{https://clarin.oeaw.ac.at/curate/}{CLARIN Curation Module}, which provides a precomputed assessment of all public profiles. (You can sort the list of profile assessment by their VLO facet coverage, which, together with string-filtering on the profile name provides a useful prioritized preselected list of profiles to be inspected for
+  suitability manually.) The   \href{https://clarin.oeaw.ac.at/smc-browser/index.html}{CLARIN SMC Browser} is also useful in evaluating profiles, components, elements and data categories used in CMDI metadata.
+
+\begin{itemize}
+\tightlist
+\item
+  Remember that you can also reuse an existing profile directly as is, you don't need to create a new one, if an existing one covers all your needs.
+\item
+  When considering components for re-use from different sources in one profile, make sure there are no overlaps, e.g.~certain
+  elements/concepts occur more than once.
+\item
+  If you find that a general component needs to be revised, e.g.~because an important value is missing from its closed vocabulary, it's a good idea to contact the creator/owner of the component (or the maintainer of the Component Registry via
+  \href{mailto:cmdi@clarin.eu}{\nolinkurl{cmdi@clarin.eu}}) and point out the problem before you simply improve a copy for your own profile. If the existing component really needs to be improved, then it's better to create a new version of this component and deprecate the old one to avoid proliferation of components in the Component Registry.
+\end{itemize}
+
+\item
+  If necessary, edit the profile and any new components in your
+  workspace until the profile satisfies the requirements set up in the beginning.
+
+\item
+  To assess the private profile with the
+  \href{https://clarin.oeaw.ac.at/curate/}{CLARIN Curation Module}, use the assessment form and enter the URL of the profile as provided by the Component Registry. This test will inform you of the basic metadata quality and the compatibility with the CLARIN infrastructure and it should be repeated after making any adjustments to the profile,  e.g.~regarding covered concepts.
+
+\begin{itemize}
+\tightlist
+\item
+  Should \emph{you find that suboptimal scores seem to be due to some concepts used in your profile are not being recognized, review the current version of the}
+  \href{https://github.com/clarin-eric/VLO/blob/master/vlo-commons/src/main/resources/facetConcepts.xml}{\emph{facet
+  definitions for the VLO}} \emph{for further information and/or contact the} \href{mailto:vlo@clarin.eu}{\emph{Helpdesk}}. \note{Alex: Why is this in italics, and why isn't the first word?}
+\end{itemize}
+
+\item
+  Publish the finalized profile with development status a.k.a. ``as draft'' (after publishing any new components).
+\item
+  Before moving from development to production status for the profile, it is recommended to first generate CMDI records and let them be harvested and displayed by the VLO for a number of resources based on this profile, since a need for minor corrections or changes might occur. If you want to use the VLO Alpha instance for testing, please contact \href{mailto:vlo@clarin.eu}{\nolinkurl{vlo@clarin.eu}}.
+\item
+  Should corrections or updates be required for a profile in production state, the current version should be deprecated and the corrected version defined as successor. Further instructions on how to deprecate items and set successors can be found in the \href{https://www.clarin.eu/content/component-registry-documentation}{Component Registry Documentation}. As deprecation of the profile used does not influence the CMDI score in the Curation Model or the ranking in the VLO, this will not cause problems for users of your profile.
+\end{enumerate}
