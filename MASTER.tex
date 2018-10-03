@@ -1,4 +1,12 @@
 \documentclass[twoside]{book}
+
+\usepackage{ifthen}
+\newboolean{bpdraft}
+
+% Set 'bpdraft' to true to enable comments and work in progress sections.
+% Set to false or comment out for version for publication
+%\setboolean{bpdraft}{true}
+
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
@@ -50,8 +58,9 @@
 \usepackage{xargs}
 \usepackage[colorinlistoftodos,prependcaption]{todonotes}
 \presetkeys{todonotes}{inline}{}
-%inline notes
-\newcommandx{\note}[2][1=]{\todo[noinline,linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+%inline notes (todos and notes only in draft)
+\newcommandx{\bptodo}[2][1=]{\ifthenelse{\boolean{bpdraft}}{\todo[#1]{#2}}{}}
+\newcommandx{\note}[2][1=]{\ifthenelse{\boolean{bpdraft}}{\todo[noinline,linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}{}}
 %priority indication - TODO: make a better implementation
 \newcommandx{\priority}[2][1=]{\todo[inline,linecolor=yellow,backgroundcolor=yellow!25,bordercolor=yellow,#1]{Priority: #2}}
 
@@ -60,13 +69,17 @@
 \usepackage[color]{changebar}
 \usepackage{comment}
 \specialcomment{workinprogress}{\begingroup\cbstart\cbcolor{red}\emph{\color{red}BEGIN WORK IN PROGRESS}\\}{\emph{\color{red}END WORK IN PROGRESS}\cbend\endgroup\\}
-%comment out the following line to exclude sections marked work in progress
-%\excludecomment{workinprogress}
 
-\date{}
+%exclude sections marked work in progress unless in draft
+\ifthenelse{\boolean{bpdraft}}{}{\excludecomment{workinprogress}}
+
+%If draft, include current date
+\date{\ifthenelse{\boolean{bpdraft}}{DRAFT (\today)}{}}
 
 \begin{document}
+
 \title{CMDI Best Practices}
+
 \author{CMDI and Metadata Curation task forces of the\\Standing Committee on CLARIN Technical Centres}
 
 \frontmatter
